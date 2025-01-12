@@ -16,6 +16,8 @@ dependencies {
     // Dependențe de bază Spring Boot
     implementation 'org.springframework.boot:spring-boot-starter'
 
+    implementation 'org.springframework.boot:spring-boot-starter-web'
+
     // Spring Boot Starter pentru testare
     testImplementation 'org.springframework.boot:spring-boot-starter-test'
 
@@ -34,7 +36,6 @@ dependencies {
     runtimeOnly 'org.postgresql:postgresql'
 
     implementation 'org.postgresql:postgresql:42.6.0'
-
 
 }
 

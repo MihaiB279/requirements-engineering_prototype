@@ -2,8 +2,11 @@ package org.example.model.user;
 
 import lombok.Data;
 
+import javax.persistence.Entity;
+
 @Data
-public class Employee extends User {
+@Entity
+public class Employee extends UserApp {
     private String company;
     private String position;
 }
