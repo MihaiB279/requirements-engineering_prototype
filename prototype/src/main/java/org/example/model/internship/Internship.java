@@ -1,5 +1,6 @@
 package org.example.model.internship;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -25,6 +26,7 @@ public class Internship {
     private String expectations;
     private String location;
 
+    @JsonIgnore
     @OneToMany(mappedBy = "internship", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Application> applications;
 }
