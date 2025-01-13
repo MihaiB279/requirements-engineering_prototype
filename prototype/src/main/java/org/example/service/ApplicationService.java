@@ -27,15 +27,8 @@ public class ApplicationService {
         this.internshipRepository = internshipRepository;
     }
 
-    /**
-     * Allows a student to apply for an internship.
-     *
-     * @param studentId      the ID of the student applying
-     * @param internshipId   the ID of the internship to apply for
-     * @throws IllegalArgumentException if the student or internship doesn't exist
-     */
+
     public void applyToInternship(Long studentId, Long internshipId) {
-        // Retrieve the student
         Optional<Student> studentOptional = studentRepository.findById(studentId);
         if (studentOptional.isEmpty()) {
             throw new IllegalArgumentException("Student not found with ID: " + studentId);
@@ -64,10 +57,8 @@ public class ApplicationService {
         application.setStatus(ApplicationStatus.PENDING);
         application.setDateApplied(new Date());
 
-        // Persist the application
         applicationRepository.save(application);
 
-        // Update the relationships
         internship.getApplications().add(application);
         student.getApplications().add(application);
     }

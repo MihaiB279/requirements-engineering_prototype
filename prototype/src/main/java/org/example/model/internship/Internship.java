@@ -23,6 +23,7 @@ public class Internship {
     private String description;
     private String benefits;
     private String expectations;
+    private String location;
 
     @OneToMany(mappedBy = "internship", cascade = CascadeType.ALL, orphanRemoval = true)
     private List<Application> applications;

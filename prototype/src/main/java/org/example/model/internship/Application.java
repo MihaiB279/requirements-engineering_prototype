@@ -14,16 +14,16 @@ public class Application {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Many-to-One relationship with Student
     @ManyToOne
-    @JoinColumn(name = "student_id")  // Optional: explicitly specify the foreign key column
+    @JoinColumn(name = "student_id")
     private Student student;
 
-    // Many-to-One relationship with Internship
     @ManyToOne
-    @JoinColumn(name = "internship_id")  // Optional: explicitly specify the foreign key column
+    @JoinColumn(name = "internship_id")
     private Internship internship;
 
+    @Enumerated(EnumType.STRING)
     private ApplicationStatus status;
+
     private Date dateApplied;
 }

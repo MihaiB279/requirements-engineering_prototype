@@ -12,12 +12,11 @@ public class Filter {
 
     public List<Internship> applyFilters(List<Internship> internships) {
         if (criteria == null || criteria.isEmpty()) {
-            return internships; // If no criteria, return all internships
+            return internships;
         }
 
-        // Apply each criterion to filter the internships
         return internships.stream()
-                .filter(internship -> matchesCriteria(internship))
+                .filter(this::matchesCriteria)
                 .collect(Collectors.toList());
     }
 
