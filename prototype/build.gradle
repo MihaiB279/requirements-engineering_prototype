@@ -12,6 +12,9 @@ repositories {
 }
 
 dependencies {
+    implementation 'org.projectlombok:lombok:1.18.28'
+    implementation 'org.projectlombok:lombok:1.18.22'// Replace with the latest version if needed
+    annotationProcessor 'org.projectlombok:lombok:1.18.28'
 
     // Dependențe de bază Spring Boot
     implementation 'org.springframework.boot:spring-boot-starter'
